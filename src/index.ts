@@ -1,20 +1,16 @@
-// To install tsconfig
-// tsc --init
-
-//______________________________________________________
-
-// In tsconfig file
-// To active rootDir to "rootDir": "./src", and put index.ts in folder src
-// To active outDir to "outDir": "./dist", to out in dist
-// To active noEmitOnError to "noEmitOnError": true, to if has error not allow to compile
-// To active removeComments to "removeComments": true, to Remove all comments
-
-//______________________________________________________
-
-// To compile to Js
-// tsc
-
 //______________________________________________________
 
 let price: number = 10;
-let isValid: boolean;
+
+// Any type
+let title: any = 10; // It's supposed we use rarely
+title = "mizo";
+title = false;
+
+let book; // It takes any type as default
+book = "programming";
+book = 20;
+
+function logger(input: any) {
+  console.log("Hello World");
+}
