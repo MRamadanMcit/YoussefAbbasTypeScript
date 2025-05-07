@@ -1,16 +1,14 @@
 //______________________________________________________
 
-let price: number = 10;
+// Arrays in TypeScript
 
-// Any type
-let title: any = 10; // It's supposed we use rarely
-title = "mizo";
-title = false;
+// Arrays of number
+const numbers: number[] = [1, 2, 3, 4];
+// numbers.push('mohamed')  // not allow to push string
+numbers.push(5);
 
-let book; // It takes any type as default
-book = "programming";
-book = 20;
+// Arrays of string
+const names: string[] = ["mohamed", "ramadan"];
 
-function logger(input: any) {
-  console.log("Hello World");
-}
+// Arrays of Any type
+const array: any = [1, "ramadan", true, null, undefined];
