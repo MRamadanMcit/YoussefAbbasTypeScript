@@ -1,3 +1,3 @@
 "use strict";
-let price = 10;
-let isValid;
+const employee = [2, "mohamed"];
+const user = [2, "mohamed", true];
