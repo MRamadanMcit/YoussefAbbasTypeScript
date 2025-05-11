@@ -1,33 +1,29 @@
-// node dist/index.js                    // To print console in terminal
+//______________________________________________________
+
+// Functions in TypeScript
+
+// Without return type (void)
+function sum1(number1: number, number2: number): void {
+  const res = number1 + number2;                           // Type of func is avoid so we can't add return to this func
+}
+
+// with return type
+function sum2(number1: number, number2: number): number {
+  const res = number1 + number2;
+  return res;
+}
+
+const result1 = sum1(1, 2);
+console.log({ "Without return type (void): ": result1 }); // undefined
+
+const result2 = sum2(1, 2);
+console.log({ "With return type: ": result2 }); // 3
 
 //______________________________________________________
 
-// Enum in TypeScript
-
-// Js Way
-const small = 0;
-const medium = 1;
-const large = 2;
-
-// TS Way
-// enum size {
-//   small,
-//   medium,
-//   large,
-// }
-
-// enum size {
-//   small,
-//   medium = 5,
-//   large,
-// }
-// we can assign number in enum and next variable takes a sequence number by default and once if add string to one variable we should add to others
-
-enum size {
-  small = "small",
-  medium = "medium",
-  large = "large",
+function getFullname(first: string, second: string, third: string) {   // third param is non use
+  const username = "mohamed";            // variable non use
+  return first + " " + second;
 }
-
-const mySize: size = size.medium;
-console.log({ mySize });
+// tsconfig file convert noUnusedLocals to "noUnusedLocals": true for add warning to any variable user non use
+// tsconfig file convert noUnusedParameters to "noUnusedParameters": true for add warning to any parameter user non use

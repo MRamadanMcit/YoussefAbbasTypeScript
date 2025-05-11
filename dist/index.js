@@ -1,12 +1,12 @@
 "use strict";
-const small = 0;
-const medium = 1;
-const large = 2;
-var size;
-(function (size) {
-    size[size["small"] = 0] = "small";
-    size[size["medium"] = 1] = "medium";
-    size[size["large"] = 2] = "large";
-})(size || (size = {}));
-const mySize = size.medium;
-console.log({ mySize });
+function sum1(number1, number2) {
+    const res = number1 + number2;
+}
+function sum2(number1, number2) {
+    const res = number1 + number2;
+    return res;
+}
+const result1 = sum1(1, 2);
+console.log({ "Without return type (void): ": result1 });
+const result2 = sum2(1, 2);
+console.log({ "With return type: ": result2 });
