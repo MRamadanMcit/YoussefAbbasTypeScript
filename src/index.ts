@@ -1,29 +1,74 @@
 //______________________________________________________
 
-// Functions in TypeScript
+// Objects in TypeScript
+// const user1: {
+//   id: number;
+//   username: string;
+//   email: string;
+//   password: number;
+//   isAdmin: boolean;
+//   getFullName: (fullName: string) => string;
+// } = {
+//   id: 1,
+//   username: "Mohamed",
+//   email: "mr@gmail.com",
+//   password: 123,
+//   isAdmin: false,
+//   getFullName: (fullName: string) => {
+//     return fullName;
+//   },
+// };
 
-// Without return type (void)
-function sum1(number1: number, number2: number): void {
-  const res = number1 + number2;                           // Type of func is avoid so we can't add return to this func
-}
-
-// with return type
-function sum2(number1: number, number2: number): number {
-  const res = number1 + number2;
-  return res;
-}
-
-const result1 = sum1(1, 2);
-console.log({ "Without return type (void): ": result1 }); // undefined
-
-const result2 = sum2(1, 2);
-console.log({ "With return type: ": result2 }); // 3
+// const user2: {
+//   id: number;
+//   username: string;
+//   email: string;
+//   password: number;
+//   isAdmin: boolean;
+//   getFullName: (fullName: string) => string;
+// } = {
+//   id: 1,
+//   username: "Mohamed",
+//   email: "mr@gmail.com",
+//   password: 123,
+//   isAdmin: false,
+//   getFullName: (fullName: string) => {
+//     return fullName;
+//   },
+// };
 
 //______________________________________________________
 
-function getFullname(first: string, second: string, third: string) {   // third param is non use
-  const username = "mohamed";            // variable non use
-  return first + " " + second;
-}
-// tsconfig file convert noUnusedLocals to "noUnusedLocals": true for add warning to any variable user non use
-// tsconfig file convert noUnusedParameters to "noUnusedParameters": true for add warning to any parameter user non use
+// Other way to collect types in one variable type
+
+type User = {
+  readonly id: number; // readonly for not assign again
+  username?: string; // ? a sign for Optional 
+  email: string;
+  password: number;
+  isAdmin: boolean;
+  getFullName: (fullName: string) => string;
+};
+
+const user1: User = {
+  id: 1,
+  email: "mr@gmail.com",
+  password: 123,
+  isAdmin: false,
+  getFullName: (fullName: string) => {
+    return fullName;
+  },
+};
+
+// user1.id = 3;       // Error for readonly property on id
+
+const user2: User = {
+  id: 1,
+  username: "Mohamed",
+  email: "mr@gmail.com",
+  password: 123,
+  isAdmin: false,
+  getFullName: (fullName: string) => {
+    return fullName;
+  },
+};
