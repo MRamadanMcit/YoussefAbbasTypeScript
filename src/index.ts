@@ -1,33 +1,34 @@
 //______________________________________________________
 
-// Intersection Type in TypeScript
+// Unknown Type
 
-type Details = {
-  title: string;
-  desc: string;
-  price: number;
-};
+// function  checkTypes(input: any) : void {
+//   input.toUpperCase(); // string
+//   input.toFixed(); // number
+//   input.valueOf(); // boolean
+// }
+// I put any type for input parameter but if want to add unknown type replace any but I found issue so should in condition
 
-type Author = {
-  authorName: string;
-  country: string;
-};
-
-type Book = Details & Author;
-// Book type has all types of Details and Author called Intersection Type
-
-const newBook: Book = {
-  title: "Black Swan",
-  desc: "About black Swan",
-  price: 100,
-  authorName: "mohamed",
-  country: "Egypt",
-};
+function checkTypes(input: unknown): void {
+  if (typeof input === "string") {
+    input.toUpperCase();
+  }
+  if (typeof input === "number") {
+    input.toFixed();
+  }
+  if (typeof input === "string") {
+    input.valueOf();
+  }
+}
 
 //______________________________________________________
 
-// Literal Type
+// never type
 
-let price: 10 | 20;
-// this variable accept just 10 or 20 value and don't accepted other value
-price = 10;
+function getErrorMSG(message: string): never {
+  throw new Error(message);
+
+  console.log("hi");
+}
+// the difference  between void and never type is:
+// void reach to end of func but never type never reach to end of func
