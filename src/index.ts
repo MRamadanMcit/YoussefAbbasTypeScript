@@ -1,15 +1,33 @@
 //______________________________________________________
 
-// Union Type in TypeScript
+// Intersection Type in TypeScript
 
-let review: number | string = 124;
-// To allow using a variable 2 types
-review = "mohamed";
+type Details = {
+  title: string;
+  desc: string;
+  price: number;
+};
 
-function getRating(rate: number | string): number | string {
-  if (typeof rate === "number") {
-    return 123;
-  } else {
-    return "mohamed";
-  }
-}
+type Author = {
+  authorName: string;
+  country: string;
+};
+
+type Book = Details & Author;
+// Book type has all types of Details and Author called Intersection Type
+
+const newBook: Book = {
+  title: "Black Swan",
+  desc: "About black Swan",
+  price: 100,
+  authorName: "mohamed",
+  country: "Egypt",
+};
+
+//______________________________________________________
+
+// Literal Type
+
+let price: 10 | 20;
+// this variable accept just 10 or 20 value and don't accepted other value
+price = 10;
