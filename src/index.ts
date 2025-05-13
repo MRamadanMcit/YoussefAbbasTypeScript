@@ -1,13 +1,27 @@
 //______________________________________________________
 
-// OOP "Object Oriented Programming"
+// OOP - Class & Object
 
-//______________________________________________________
+class Account {
+  id: number; // property
+  owner: string;
+  balance: number;
 
-// What's OOP?
-// OOP is style of programming
-// In OOP we combine group of variable and functions into a unit and we call that is Object
-// We refer to the variable into object as properties and the functions as method
+  constructor(id: number, owner: string, balance: number) {
+    this.id = id; // this refer to Object not class
+    this.owner = owner;
+    this.balance = balance;
+  }
 
-//______________________________________________________
+  deposit(amount: number): void {
+    // Method
+    if (amount < 0) throw new Error("Amount can not be less than zero");
+    // for amount can not be less than 0
+    this.balance = this.balance + amount;
+  }
+}
 
+let mohamed = new Account(1, "ramadan", 100); // () refer to constructor
+// console.log({mohamed});// { mohamed: Account { id: 1, owner: 'ramadan', balance: 100 } }
+mohamed.deposit(200);
+console.log({ mohamed }); // { mohamed: Account { id: 1, owner: 'ramadan', balance: 300 } }

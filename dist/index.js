@@ -1,11 +1,16 @@
 "use strict";
-let review = 124;
-review = "mohamed";
-function getRating(rate) {
-    if (typeof rate === "number") {
-        return 123;
+class Account {
+    constructor(id, owner, balance) {
+        this.id = id;
+        this.owner = owner;
+        this.balance = balance;
     }
-    else {
-        return "mohamed";
+    deposit(amount) {
+        if (amount < 0)
+            throw new Error("Amount can not be less than zero");
+        this.balance = this.balance + amount;
     }
 }
+let mohamed = new Account(1, 'ramadan', 100);
+mohamed.deposit(-1);
+console.log({ mohamed });
