@@ -1,34 +1,13 @@
 //______________________________________________________
 
-// Unknown Type
-
-// function  checkTypes(input: any) : void {
-//   input.toUpperCase(); // string
-//   input.toFixed(); // number
-//   input.valueOf(); // boolean
-// }
-// I put any type for input parameter but if want to add unknown type replace any but I found issue so should in condition
-
-function checkTypes(input: unknown): void {
-  if (typeof input === "string") {
-    input.toUpperCase();
-  }
-  if (typeof input === "number") {
-    input.toFixed();
-  }
-  if (typeof input === "string") {
-    input.valueOf();
-  }
-}
+// OOP "Object Oriented Programming"
 
 //______________________________________________________
 
-// never type
+// What's OOP?
+// OOP is style of programming
+// In OOP we combine group of variable and functions into a unit and we call that is Object
+// We refer to the variable into object as properties and the functions as method
 
-function getErrorMSG(message: string): never {
-  throw new Error(message);
+//______________________________________________________
 
-  console.log("hi");
-}
-// the difference  between void and never type is:
-// void reach to end of func but never type never reach to end of func
