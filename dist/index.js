@@ -11,6 +11,5 @@ class Account {
         this.balance = this.balance + amount;
     }
 }
-let mohamed = new Account(1, 'ramadan', 100);
-mohamed.deposit(-1);
-console.log({ mohamed });
+let mohamed = new Account(1, "ramadan", 100);
+console.log({ instanceof: mohamed instanceof Account });
